@@ -1,0 +1,16 @@
+.jquery-tooltip
+{
+    position: absolute;
+    padding: 15px 15px;
+    background: #000;
+    color: white;
+    border-radius: 5px;
+    opacity:0.85;
+    filter:alpha(opacity=85);
+    width: 250px;
+    font-size: 0.75em;
+    font-weight: bold;
+    text-align: justify;
+    margin: 5px 10px;
+}
+
