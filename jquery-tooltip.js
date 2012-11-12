@@ -2,6 +2,8 @@ $(document).ready(function(){
     var tooltipId="#jquery-tooltip";
     
     $('.jquery-tooltip-parent').mouseover(function() {
+        $(".jquery-tooltip").remove(); 
+        
         tooltipId=tooltipId+"_"+$(this).attr('id');
         //alert(tooltipId);
         
@@ -22,9 +24,15 @@ $(document).ready(function(){
         // Set the tooltip position
         var elementTop=$(this).position().top;
         var elementHeight=$(this).height();
+        var elementPaddingTop=parseInt( $(this).css("paddingTop").replace(/px/, "") );
+        var elementPaddingBottom=parseInt( $(this).css("paddingBottom").replace(/px/, "") );
         var elementMarginTop=parseInt( $(this).css("marginTop").replace(/px/, "") );
         var elementMarginBottom=parseInt( $(this).css("marginBottom").replace(/px/, "") );
-        var top=elementTop+elementHeight+elementMarginTop+elementMarginBottom;
+        var elementBorderTop=parseInt( $(this).css("borderTop").replace(/px/, "") );
+        var elementBorderBottom=parseInt( $(this).css("borderBottom").replace(/px/, "") );
+        
+        // Set top position of tooltip in relation with margin, padding, parent top position and parent height
+        var top=elementTop+elementHeight+elementMarginTop+elementMarginBottom+elementPaddingTop+elementPaddingBottom+elementBorderTop+elementBorderBottom;
         
         var elementWidth=$(this).width();
         var elementLeft=$(this).position().left;
@@ -65,3 +73,5 @@ $(document).ready(function(){
         });
     });
 });
+
+

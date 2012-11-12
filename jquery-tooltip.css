@@ -1,6 +1,6 @@
 .jquery-tooltip
 {
-    position: absolute;
+    position: relative;
     padding: 15px 15px;
     background: #000;
     color: white;
